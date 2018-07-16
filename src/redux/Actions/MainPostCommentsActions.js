@@ -17,7 +17,7 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
 
 export const fetchMainPostComments = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/main_post_comments/')
+    axios.get('http://immense-temple-74459/api/v1/main_post_comments/')
     .then(res => dispatch({
       type: FETCH_MAIN_POST_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -31,7 +31,7 @@ export const fetchMainPostComments = () => {
 
 export const addMainPostComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/main_post_comments/', {name, comment, avatar, storyId})
+    axios.post('http://immense-temple-74459/api/v1/main_post_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: ADD_MAIN_POST_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -45,7 +45,7 @@ export const addMainPostComments = (name, comment, avatar, storyId) => {
 
 export const deleteMainPostComments = (id) => {
   return dispatch => {
-    axios.delete(`http://localhost:3000/api/v1/main_post_comments/${id}`)
+    axios.delete(`http://immense-temple-74459/api/v1/main_post_comments/${id}`)
     .then(res => dispatch({
       type: DELETE_MAIN_POST_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -59,7 +59,7 @@ export const deleteMainPostComments = (id) => {
 
 export const editMainPostComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.put('http://localhost:3000/api/v1/main_post_comments/', {name, comment, avatar, storyId})
+    axios.put('http://immense-temple-74459/api/v1/main_post_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: PUT_MAIN_POST_COMMENTS_SUCCESS,
       payload: res.data.data

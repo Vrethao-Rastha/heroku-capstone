@@ -5,7 +5,7 @@ export const FETCH_ABOUT_FAILED = 'FETCH_ABOUT_FAILED'
 
 export const fetchAbout = () => {
     return dispatch => {
-      axios.get(`http://localhost:3000/api/v1/about`)
+      axios.get(`http://immense-temple-74459/api/v1/about`)
         .then(res => dispatch({
           type: FETCH_ABOUT_SUCCESS,
           payload: res.data.data

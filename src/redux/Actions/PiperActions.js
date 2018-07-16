@@ -20,7 +20,7 @@ export const PUT_PIPER_COMMENTS_SUCCESS = 'PUT_PIPER_COMMENTS_SUCCESS'
 
 export const fetchPiperStories = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/piper_news/')
+    axios.get('http://immense-temple-74459/api/v1/piper_news/')
     .then(res => dispatch({
       type: FETCH_PIPER_STORIES_SUCCESS,
       payload: res.data.data
@@ -34,7 +34,7 @@ export const fetchPiperStories = () => {
 
 export const fetchPiperComments = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/piper_comments/')
+    axios.get('http://immense-temple-74459/api/v1/piper_comments/')
     .then(res => dispatch({
       type: FETCH_PIPER_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -48,7 +48,7 @@ export const fetchPiperComments = () => {
 
 export const addPiperComments = (name, comment, avatar) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/piper_comments/', {name, comment, avatar})
+    axios.post('http://immense-temple-74459/api/v1/piper_comments/', {name, comment, avatar})
     .then(res => dispatch({
       type: ADD_PIPER_COMMENTS_SUCCESS,
       payload: res.data.data

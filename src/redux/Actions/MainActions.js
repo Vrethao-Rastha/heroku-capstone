@@ -24,7 +24,7 @@ export const MAIN_REDIRECT_PENDING = 'REDIRECT_PENDING'
 
 export const fetchMainStory = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/main_story/')
+    axios.get('http://immense-temple-74459/api/v1/main_story/')
     .then(res => dispatch({
       type: FETCH_MAIN_STORY_SUCCESS,
       payload: res.data.data
@@ -40,7 +40,7 @@ export const fetchMainSingle = (id, history) => {
   return async dispatch => {
     try{
       dispatch({type: MAIN_REDIRECT_PENDING})
-    let res = await fetch(`http://localhost:3000/api/v1/main_story/${id}`)
+    let res = await fetch(`http://immense-temple-74459/api/v1/main_story/${id}`)
     let userObj = await res.json()
     dispatch({
       type: FETCH_MAIN_SINGLE_SUCCESS,
@@ -58,7 +58,7 @@ export const fetchMainSingle = (id, history) => {
 
 export const fetchMainStoryComments = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/main_story_comments/')
+    axios.get('http://immense-temple-74459/api/v1/main_story_comments/')
     .then(res => dispatch({
       type: FETCH_MAIN_STORY_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -72,7 +72,7 @@ export const fetchMainStoryComments = () => {
 
 export const addMainStoryComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar, storyId})
+    axios.post('http://immense-temple-74459/api/v1/main_story_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: ADD_MAIN_STORY_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -86,7 +86,7 @@ export const addMainStoryComments = (name, comment, avatar, storyId) => {
 
 export const deleteMainComments = (id) => {
   return dispatch => {
-    axios.delete(`http://localhost:3000/api/v1/main_story_comments/${id}`)
+    axios.delete(`http://immense-temple-74459/api/v1/main_story_comments/${id}`)
     .then(res => dispatch({
       type: DELETE_MAIN_STORY_COMMENTS_SUCCESS,
       payload: res.data.data
@@ -100,7 +100,7 @@ export const deleteMainComments = (id) => {
 
 export const editMainComments = (name, comment, avatar, storyId) => {
   return dispatch => {
-    axios.put('http://localhost:3000/api/v1/main_story_comments/', {name, comment, avatar, storyId})
+    axios.put('http://immense-temple-74459/api/v1/main_story_comments/', {name, comment, avatar, storyId})
     .then(res => dispatch({
       type: PUT_MAIN_STORY_COMMENTS_SUCCESS,
       payload: res.data.data

@@ -14,7 +14,7 @@ export const BLOG_REDIRECT_PENDING = 'BLOG_REDIRECT_PENDING'
 
 export const fetchBlogStories = () => {
   return dispatch => {
-    axios.get('http://localhost:3000/api/v1/blogs/')
+    axios.get('http://immense-temple-74459/api/v1/blogs/')
     .then(res => dispatch({
       type: FETCH_BLOG_STORIES_SUCCESS,
       payload: res.data.data
@@ -28,7 +28,7 @@ export const fetchBlogStories = () => {
 
 export const addBlog = (title, body, picture) => {
   return dispatch => {
-    axios.post('http://localhost:3000/api/v1/blogs/', {title, body, picture})
+    axios.post('http://immense-temple-74459/api/v1/blogs/', {title, body, picture})
     .then(res => dispatch({
       type: ADD_BLOG_STORIES_SUCCESS,
       payload: res.data.data
@@ -42,7 +42,7 @@ export const addBlog = (title, body, picture) => {
 
 export const deleteBlog = (id) => {
   return dispatch => {
-    axios.delete(`http://localhost:3000/api/v1/blogs/ ${id}`)
+    axios.delete(`http://immense-temple-74459/api/v1/blogs/ ${id}`)
     .then(res => dispatch({
       type: DELETE_BLOG_STORIES_SUCCESS,
       payload: res.data.data
@@ -56,7 +56,7 @@ export const deleteBlog = (id) => {
 
 export const editBlog = (id, title, body, picture) => {
   return dispatch => {
-    axios.put(`http://localhost:3000/api/v1/blogs/${id}`, {title, body, picture})
+    axios.put(`http://immense-temple-74459/api/v1/blogs/${id}`, {title, body, picture})
     .then(res => dispatch({
       type: PUT_BLOG_STORIES_SUCCESS,
       payload: res.data.data
@@ -72,7 +72,7 @@ export const fetchBlogSingle = (id, history) => {
   return async dispatch => {
     try{
       dispatch({type: BLOG_REDIRECT_PENDING})
-    let res = await fetch(`http://localhost:3000/api/v1/blogs/${id}`)
+    let res = await fetch(`http://immense-temple-74459/api/v1/blogs/${id}`)
     let userObj = await res.json()
     dispatch({
       type: FETCH_BLOG_SINGLE_SUCCESS,
